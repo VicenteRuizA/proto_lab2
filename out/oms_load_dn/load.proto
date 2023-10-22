@@ -1,0 +1,22 @@
+syntax="proto3";
+
+option go_package = "github.com/VicenteRuizA/proto_lab2/out/oms_load_dn";
+
+package oms_load_dn;
+
+service Load {
+	rpc RequestData (DataRequest) returns (DataReply) {}
+}
+
+// Clientes envian request a servidor central para procesar su informacion
+// Pensar en terminos informaticos mas que linguisticos
+// No es que los clientes pidan la severidad, piden procesar la severidad.
+message DataRequest {
+	string id = 1;
+}
+
+message DataReply {
+	string nombre = 1;
+	string apellido = 2;
+}
+
