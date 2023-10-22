@@ -8,9 +8,6 @@ service Request {
 	rpc RequestCondition (ConditionRequest) returns (ConditionReply) {}
 }
 
-// Clientes envian request a servidor central para procesar su informacion
-// Pensar en terminos informaticos mas que linguisticos
-// No es que los clientes pidan la severidad, piden procesar la severidad.
 message ConditionRequest {
 	string condition = 1;
 }

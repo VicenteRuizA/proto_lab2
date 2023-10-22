@@ -1,0 +1,35 @@
+syntax="proto3";
+
+option go_package = "github.com/VicenteRuizA/proto_lab2/oms_service";
+
+package oms_service;
+
+// continente reporta casos a oms
+service Report {
+	rpc IdentifyCondition (SeverityRequest) returns (SeverityReply) {}
+}
+
+message SeverityRequest {
+	string name = 1;
+    string surname = 2;
+	string condition = 3;
+}
+
+message SeverityReply {
+	string message = 1;
+}
+
+// ONU hace request a base de condicion de paciente a oms
+service Request {
+	rpc RequestCondition (ConditionRequest) returns (ConditionReply) {}
+}
+
+message ConditionRequest {
+	string condition = 1;
+}
+
+message ConditionReply {
+	string nombre = 1;
+	string apellido = 2;
+}
+

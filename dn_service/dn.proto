@@ -1,0 +1,34 @@
+syntax="proto3";
+
+option go_package = "github.com/VicenteRuizA/proto_lab2/dn_service";
+
+package dn_service;
+
+
+service Save {
+	rpc SaveNaming (SaveRequest) returns (SaveReply) {}
+}
+
+message SaveRequest {
+	string id = 1;
+	string name = 2;
+    string surname = 3;
+}
+
+message SaveReply {
+	string message = 1;
+}
+
+service Load {
+	rpc RequestData (DataRequest) returns (DataReply) {}
+}
+
+message DataRequest {
+	string id = 1;
+}
+
+message DataReply {
+	string nombre = 1;
+	string apellido = 2;
+}
+
