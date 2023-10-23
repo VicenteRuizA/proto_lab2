@@ -29,6 +29,10 @@ message ConditionRequest {
 }
 
 message ConditionReply {
+	repeated Person persons = 1;
+}
+
+message Person {
 	string nombre = 1;
 	string apellido = 2;
 }
